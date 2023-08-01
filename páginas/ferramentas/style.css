@@ -1,0 +1,124 @@
+/* Tudo pro cabeçalho */
+#header {
+    padding: 22px;
+    border-bottom: solid 7px #00a2e2;
+    position: fixed;
+    z-index: 10;
+    height: auto;
+    width: 100%;
+    display: none;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+.header-transition {
+    transition: opacity 0.2s ease-in;
+}
+
+#title {
+    font-size: inherit;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+#container_logo2 {
+    display: none;
+}
+  
+nav {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: absolute;
+}
+nav ul {
+    display: flex;
+    text-align: center;
+}
+
+.container_li {
+    display: block;
+    margin: 0 20px;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+
+nav ul li {
+    font-family: 'roboto', sans-serif;
+    display: inline-block;
+    font-size: inherit;
+}
+
+#barrinha {
+    background-color: white;
+}
+.container_li div {
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 8px;
+    width: 52px;
+    background-color: transparent;
+}
+
+.container_li:hover div {
+    background-color: white;
+    transition-duration: 0.5s;
+}
+/* fim */
+
+/* main */
+/* Estilos gerais para o menu */
+main {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .grid-item {
+    border-radius: 3px;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos para a imagem */
+  .grid-item img {
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para o nome da matéria */
+  .grid-item p {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+#materia1 {
+    background-color: #00a2e2;
+}
+#materia2 {
+    background-color: beige;
+}
+/* fim */

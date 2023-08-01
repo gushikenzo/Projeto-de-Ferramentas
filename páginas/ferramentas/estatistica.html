@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Estatísticas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Calculadora de Estatísticas</h1>
+        <label for="numbers">Digite os números (separados por vírgula):</label>
+        <input type="text" id="numbers" placeholder="Ex: 1, 2, 3, 4, 5">
+        <button onclick="calculateStats()">Calcular</button>
+
+        <div id="result">
+            <p>A Média, calculada pela divisão entre a soma do intervalo e a soma das frequências, resulta em: <span id="mean"></span></p>
+            <p>A Moda, considerada pelo valor de maior frequência, é: <span id="mode"></span></p>
+            <p>A Mediana, que é pega pelo elemento do meio de um intervalo/conjunto, é: <span id="median"></span></p>
+        </div>
+    </main>
+
+    <script>
+        function calculateStats() {
+        const numbersInput = document.getElementById('numbers');
+        const resultMean = document.getElementById('mean');
+        const resultMode = document.getElementById('mode');
+        const resultMedian = document.getElementById('median');
+
+        const numbers = numbersInput.value.split(',').map(number => parseFloat(number.trim()));
+
+        const mean = numbers.reduce((acc, num) => acc + num, 0) / numbers.length;
+        const mode = calculateMode(numbers);
+        const median = calculateMedian(numbers);
+
+        resultMean.textContent = mean.toFixed(2);
+        resultMode.textContent = mode;
+        resultMedian.textContent = median.toFixed(2);
+    }
+
+    function calculateMode(numbers) {
+        const countMap = {};
+
+        numbers.forEach(num => {
+            countMap[num] = (countMap[num] || 0) + 1;
+        });
+
+        let mode;
+        let maxCount = 0;
+
+        for (const num in countMap) {
+            if (countMap[num] > maxCount) {
+                maxCount = countMap[num];
+                mode = num;
+            }
+        }
+
+        return mode;
+    }
+
+    function calculateMedian(numbers) {
+        const sortedNumbers = numbers.slice().sort((a, b) => a - b);
+        const middleIndex = Math.floor(sortedNumbers.length / 2);
+
+        if (sortedNumbers.length % 2 === 0) {
+            return (sortedNumbers[middleIndex - 1] + sortedNumbers[middleIndex]) / 2;
+        } else {
+            return sortedNumbers[middleIndex];
+        }
+    }
+
+    </script>
+</body>
+</html>

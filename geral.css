@@ -1,0 +1,59 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  background-size: cover;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+p, strong, b {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+}
+
+/* Estilização básica da barra de rolagem */
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #646dd1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0214DC;
+}
+
+
+@media screen and (max-width: 1920px) {
+  ::-webkit-scrollbar, ::webkit-scrollbar-track {
+    width: none;
+    height: none;
+  }
+}
